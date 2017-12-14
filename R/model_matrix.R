@@ -30,7 +30,17 @@ model_matrix.data.frame <- function(data, formula) {
   tibble::as_tibble(res)
 }
 
+
+#' Response vector
+#'
+#' \code{model_response} returns the response vector associated to the model formula.
+#'
+#' @inheritParams model_matrix
+#'
+#' @return A vector containing the model response.
 #' @export
+#'
+#' @examples model_response(mtcars, mpg~cyl)
 model_response <- function(data, formula) UseMethod("model_response")
 
 #' @export
