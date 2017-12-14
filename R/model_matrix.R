@@ -56,7 +56,7 @@ model_response.data.frame <- function(data, formula) {
     glue_abort("`{obj}` is not a formula")
   }
 
-  mostattributes(stats::model.response(stats::model.frame(formula, data = data)), NULL)
+  res <- stats::model.response(stats::model.frame(formula, data = data))
+
+  mostattributes(res, NULL)
 }
-
-
