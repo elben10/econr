@@ -12,7 +12,7 @@ r:
 
 os:
   - linux
-  - osx
+#  - osx
 
 after_success:
   - Rscript -e 'covr::codecov()'
