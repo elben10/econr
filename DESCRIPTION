@@ -10,11 +10,15 @@ Depends:
     R (>= 3.1)
 Imports: 
     glue,
+    Rcpp,
     rlang,
     tibble
 Suggests: 
     covr,
     testthat
+LinkingTo: 
+    Rcpp,
+    RcppArmadillo
 ByteCompile: true
 Encoding: UTF-8
 LazyData: true
