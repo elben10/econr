@@ -18,5 +18,5 @@ Returns a list of class mod.
 \code{model_lm} estimates linear models by minimizing the sum of squared residuals.
 }
 \examples{
-mod_lm(mtcars, mpg~cyl)
+model_lm(mtcars, mpg~cyl)
 }

@@ -8,7 +8,7 @@
 #' @return Returns a list of class mod.
 #' @export
 #'
-#' @examples mod_lm(mtcars, mpg~cyl)
+#' @examples model_lm(mtcars, mpg~cyl)
 model_lm <- function(data, formula) UseMethod("model_lm")
 
 #' @export
