@@ -23,7 +23,9 @@ mod_lm.data.frame <- function(data, formula) {
   X <- stats::model.matrix(attr(mf, "terms"), data=mf)
   y <-stats::model.response(mf)
 
-  structure(c(lm_rcpp(X, y, colnames(X)), call = match.call()),
+  structure(c(lm_rcpp(X, y, colnames(X)),
+              call = match.call(),
+              formula = formula),
             class = c("mod_lm", "mod"))
 }
 
