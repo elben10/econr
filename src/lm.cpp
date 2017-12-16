@@ -30,6 +30,13 @@ List lm_rcpp(arma::mat X, arma::vec y, CharacterVector X_names) {
   double res_r_squared = 1 - arma::as_scalar(resid.t() * resid) / arma::as_scalar((y.t() - mean(y)) * (y - mean(y)));
   double res_adj_r_squared = 1 - (1 - res_r_squared) * ((n - 1) /(double) (n - k));
   double res_f_statistics = (res_r_squared * (n - k)) / ((1 - res_r_squared) * (k - 1));
+  NumericMatrix res_return(k, 4);
+  res_return(_, 0) = res_coef;
+  res_return(_, 1) = res_SE;
+  res_return(_, 2) = res_t_values;
+  res_return(_, 3) = res_p_values;
+  rownames(res_return) = X_names;
+  colnames(res_return) = CharacterVector::create("Estimate", "SE", "t-values", "p-values");
 
 
   return List::create(Named("coefficients") = res_coef,
@@ -41,5 +48,8 @@ List lm_rcpp(arma::mat X, arma::vec y, CharacterVector X_names) {
                       Named("p_values") = res_p_values,
                       Named("r_squared") = res_r_squared,
                       Named("adj_r_squared") = res_adj_r_squared,
-                      Named("f_statistics") = res_f_statistics);
+                      Named("f_statistics") = res_f_statistics,
+                      Named("return") = res_return,
+                      Named("observations") = n,
+                      Named("regressors") = k);
 }
