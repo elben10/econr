@@ -16,7 +16,7 @@ os:
 sudo: required
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh inst/openmp.sh) ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sh inst/openmp.sh ; fi
 
 
 after_success:
