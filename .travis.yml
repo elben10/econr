@@ -10,8 +10,8 @@ r:
 
 
 os:
-  #- linux
-  - osx
+  - linux
+  #- osx
 
 sudo: required
 
