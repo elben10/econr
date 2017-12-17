@@ -47,5 +47,4 @@ artifacts:
 environment:
   matrix:
   - R_VERSION: release
-  - R_VERSION: devel
   - R_VERSION: oldrel
