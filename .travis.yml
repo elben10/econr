@@ -16,8 +16,8 @@ os:
 sudo: required
 
 before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl -LO http://r.research.att.com/libs/clang-4.0.0-darwin15.6-Release.tar.gz ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tar fvxz clang-4.0.0-darwin15.6-Release.tar.gz -C / ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; (cd inst; ls; sh openmp.sh) ; fi
+
 
 after_success:
   - Rscript -e 'covr::codecov()'
